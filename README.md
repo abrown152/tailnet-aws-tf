@@ -1,8 +1,11 @@
 # Tailscale Tailnet Deployment Using Terraform and AWS
 
 
-This Terraform project automates the provisioning of two EC2 instances on AWS to serve as a Tailnet device and subnet router, including creating an SSH key pair and configuring the remote backend to work with Terraform Cloud. 
+This Terraform project automates the provisioning of two EC2 instances on AWS to serve as a Tailnet device and subnet router, including creating an SSH key pair and configuring the remote backend to work with Terraform Cloud.
 
+<div align="center">
+  <img src="https://github.com/abrown152/tailnet-aws-tf/blob/main/TailscaleProjectDiagram.png" alt="relational project diagram" style="width:700px;"/>
+</div>
 
 ## Prerequisites
 
