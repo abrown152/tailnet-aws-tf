@@ -27,6 +27,10 @@ resource "aws_instance" "subnet_router" {
               curl -fsSL https://tailscale.com/install.sh | sh
               systemctl start tailscaled
               tailscale up --authkey=${var.auth_key}
+              echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+              echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+              sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+              sudo tailscale up --advertise-routes=172.31.32.0/20
               EOF
 }
 
